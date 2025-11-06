@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redesigned Android Card Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Redesigned Android Card Layout</h1>
+        <p class="description">A modern, enhanced version of your Android XML layout with improved styling and functionality.</p>
+
+        <div class="preview-section">
+            <h2>Preview</h2>
+
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-content">
+                    <div class="header">
+                        <h3 class="name">John Doe</h3>
+                        <span class="status status-active">Active</span>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="content">
+                        <p class="description-text">Software Engineer with 5+ years of experience in mobile development. Specialized in Android and cross-platform solutions.</p>
+
+                        <div class="actions">
+                            <button class="btn btn-edit">Edit</button>
+                            <button class="btn btn-delete">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-content">
+                    <div class="header">
+                        <h3 class="name">Jane Smith</h3>
+                        <span class="status status-pending">Pending</span>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="content">
+                        <p class="description-text">UI/UX Designer passionate about creating intuitive and beautiful user experiences for mobile applications.</p>
+
+                        <div class="actions">
+                            <button class="btn btn-edit">Edit</button>
+                            <button class="btn btn-delete">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-content">
+                    <div class="header">
+                        <h3 class="name">Michael Johnson</h3>
+                        <span class="status status-inactive">Inactive</span>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="content">
+                        <p class="description-text">Product Manager driving innovation and leading teams to deliver exceptional mobile products to millions of users.</p>
+
+                        <div class="actions">
+                            <button class="btn btn-edit">Edit</button>
+                            <button class="btn btn-delete">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="xml-section">
+            <h2>XML Code</h2>
+            <div class="code-tabs">
+                <button class="tab-btn active" data-tab="layout">item_layout.xml</button>
+                <button class="tab-btn" data-tab="drawable">status_background.xml</button>
+            </div>
+
+            <div class="code-container">
+                <pre id="layout-code" class="code-block active"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp"
+    android:elevation="4dp"&gt;
+
+    &lt;LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="@android:color/white"&gt;
+
+        &lt;!-- Header Section --&gt;
+        &lt;LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="12dp"&gt;
+
+            &lt;TextView
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Name"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="#1A1A1A"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:letterSpacing="0.01"/&gt;
+
+            &lt;TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active"
+                android:textSize="14sp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/status_background"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:layout_marginStart="12dp"/&gt;
+
+        &lt;/LinearLayout&gt;
+
+        &lt;!-- Divider --&gt;
+        &lt;View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="12dp"/&gt;
+
+        &lt;!-- Content Section --&gt;
+        &lt;LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"&gt;
+
+            &lt;TextView
+                android:id="@+id/tv_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:lineSpacingExtra="4dp"
+                android:maxLines="2"
+                android:ellipsize="end"/&gt;
+
+            &lt;!-- Action Buttons --&gt;
+            &lt;LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:layout_marginTop="16dp"&gt;
+
+                &lt;Button
+                    android:id="@+id/btn_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Edit"
+                    android:textSize="14sp"
+                    android:textColor="#2196F3"
+                    android:background="?attr/selectableItemBackground"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    style="?android:attr/borderlessButtonStyle"/&gt;
+
+                &lt;Button
+                    android:id="@+id/btn_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Delete"
+                    android:textSize="14sp"
+                    android:textColor="#F44336"
+                    android:background="?attr/selectableItemBackground"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:layout_marginStart="8dp"
+                    style="?android:attr/borderlessButtonStyle"/&gt;
+
+            &lt;/LinearLayout&gt;
+
+        &lt;/LinearLayout&gt;
+
+    &lt;/LinearLayout&gt;
+
+&lt;/androidx.cardview.widget.CardView&gt;</code></pre>
+
+                <pre id="drawable-code" class="code-block"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle"&gt;
+
+    &lt;solid android:color="#4CAF50"/&gt;
+
+    &lt;corners android:radius="20dp"/&gt;
+
+    &lt;padding
+        android:left="8dp"
+        android:right="8dp"
+        android:top="4dp"
+        android:bottom="4dp"/&gt;
+
+&lt;/shape&gt;</code></pre>
+            </div>
+
+            <button class="download-btn" onclick="downloadFiles()">Download XML Files</button>
+        </div>
+
+        <div class="improvements-section">
+            <h2>Key Improvements</h2>
+            <div class="improvements-grid">
+                <div class="improvement-card">
+                    <div class="improvement-icon">🎨</div>
+                    <h3>Enhanced Styling</h3>
+                    <p>Increased corner radius (16dp), elevation (8dp), and padding (20dp) for a more premium look</p>
+                </div>
+                <div class="improvement-card">
+                    <div class="improvement-icon">📐</div>
+                    <h3>Better Structure</h3>
+                    <p>Added divider line, description field, and action buttons for improved organization</p>
+                </div>
+                <div class="improvement-card">
+                    <div class="improvement-icon">🎯</div>
+                    <h3>Status Badge</h3>
+                    <p>Rounded status background with custom drawable for a modern pill-shaped design</p>
+                </div>
+                <div class="improvement-card">
+                    <div class="improvement-icon">⚡</div>
+                    <h3>Action Buttons</h3>
+                    <p>Borderless Edit and Delete buttons with Material Design colors and ripple effects</p>
+                </div>
+                <div class="improvement-card">
+                    <div class="improvement-icon">📱</div>
+                    <h3>Typography</h3>
+                    <p>Improved text sizes, colors, and letter spacing for better readability</p>
+                </div>
+                <div class="improvement-card">
+                    <div class="improvement-icon">✨</div>
+                    <h3>Modern Design</h3>
+                    <p>Material Design principles with proper spacing and visual hierarchy</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
